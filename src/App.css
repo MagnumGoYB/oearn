@@ -1,17 +1,17 @@
 @import '~antd/dist/antd.css';
 
-@font-face {font-family: 'logo';
-  src: url('//at.alicdn.com/t/webfont_uanz48ebhe7.eot');
-  src: url('//at.alicdn.com/t/webfont_uanz48ebhe7.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/webfont_uanz48ebhe7.woff') format('woff'),
-  url('//at.alicdn.com/t/webfont_uanz48ebhe7.ttf') format('truetype'),
-  url('//at.alicdn.com/t/webfont_uanz48ebhe7.svg#杨任东竹石体-Bold') format('svg');
+@font-face {
+  font-family: 'logo';
+  src: url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.svg#站酷小薇体') format('svg'); /* iOS 4.1- */
 }
 
 .upper {
   height: 120px;
-  padding-left: 65px;
-  padding-right: 50px;
+  padding: 0 50px;
 }
 
 .upper::after {
@@ -19,6 +19,22 @@
   clear: both;
   height: 0;
   content: '\20'
+}
+
+.upper-user-avatar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.upper-user-dropdown-menu .anticon {
+  margin-right: 8px;
+}
+
+.upper-user-dropdown-menu .ant-dropdown-menu-item {
+  padding: 5px 15px;
 }
 
 .logo {
