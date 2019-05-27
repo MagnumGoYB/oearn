@@ -33,7 +33,7 @@ export class Header extends React.Component {
                   />
                 </Col>
                 <Col>
-                  <UpperUser name="鲁Da师" />
+                  <UpperUser name="鲁Da师" avatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                 </Col>
               </Row>
             </Col>

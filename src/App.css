@@ -37,6 +37,39 @@
   padding: 5px 15px;
 }
 
+.upper-user-notices-title {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.upper-user-notices {
+  width: 240px;
+}
+
+.upper-user-notices-item {
+  overflow: hidden;
+}
+
+.upper-user-notices-item:first-child {
+  padding-top: 0;
+}
+
+.upper-user-notices-item:last-child {
+  padding-bottom: 0;
+}
+
+.upper-user-notices-item div {
+  width: 100%;
+}
+
+.upper-user-notices-item .title {
+  width: 90%;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .logo {
   position: relative;
   height: 120px;
