@@ -1,14 +1,5 @@
 @import '~antd/dist/antd.css';
 
-@font-face {
-  font-family: 'logo';
-  src: url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.eot'); /* IE9*/
-  src: url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_ueqr6lyjo2s.svg#站酷小薇体') format('svg'); /* iOS 4.1- */
-}
-
 .upper {
   height: 120px;
   padding: 0 50px;
@@ -29,12 +20,17 @@
   cursor: pointer;
 }
 
-.upper-user-dropdown-menu .anticon {
-  margin-right: 8px;
+.upper-user-dropdown-menu ul {
+  border: none;
+  margin: -10px;
 }
 
-.upper-user-dropdown-menu .ant-dropdown-menu-item {
-  padding: 5px 15px;
+.upper-user-dropdown-menu ul li:not(:last-child) {
+  margin-bottom: 4px !important;
+}
+
+.upper-user-dropdown-menu .anticon {
+  margin-right: 8px;
 }
 
 .upper-user-notices-title {
@@ -73,18 +69,10 @@
 
 .logo {
   position: relative;
-  height: 120px;
-  line-height: 120px;
-  float: left;
-  font-family: 'logo';
-  font-size: 32px;
-  color: rgb(81, 44, 86);
-  cursor: default;
 }
 
-.logo .anticon {
-  vertical-align: -11px;
-  margin-right: 5px;
+.logo > img {
+  max-height: 30px;
 }
 
 .navbar {

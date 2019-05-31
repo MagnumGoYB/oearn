@@ -22,14 +22,13 @@ export class Header extends React.Component {
                 type="flex" 
                 justify="end" 
                 align="middle" 
-                gutter={16} 
                 style={{ height: 120 }}
               >
                 <Col>
                   <Search
                     placeholder="请输入搜索内容..."
                     onSearch={value => console.log(value)}
-                    style={{ width: 200, marginRight: 40 }}
+                    style={{ width: 200, marginRight: 60 }}
                   />
                 </Col>
                 <Col>

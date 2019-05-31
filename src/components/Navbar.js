@@ -11,7 +11,7 @@ export class Navbar extends React.Component {
           theme="dark"
           mode="horizontal"
           className="navbar"
-          defaultSelectedKeys={["1"]}
+          selectable={false}
         >
           <Menu.Item key="1">
             <Link to="/">首页</Link>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Row, Col, Icon, Avatar, Badge, Menu, Dropdown, Popover, Skeleton, Typography, List } from 'antd';
+import { Row, Col, Icon, Avatar, Badge, Menu, Popover, Skeleton, Typography, List } from 'antd'
 
 const { Paragraph } = Typography
 
@@ -42,10 +42,32 @@ export class UpperUser extends React.Component {
   }
   render() {
     const { name, avatar, notices, isLoading } = this.state
-    const menu = (
-      <Menu className="upper-user-dropdown-menu">
+    const noticeContent = (
+      <Skeleton loading={isLoading} active>
+        <div className="upper-user-notices-content">
+          <List
+            itemLayout="horizontal"
+            dataSource={notices}
+            renderItem={item => (
+              <List.Item className="upper-user-notices-item">
+                <List.Item.Meta
+                  title={
+                    <Link to="/" className="title">{item.title}</Link>
+                  }
+                  description={
+                    <Paragraph type="secondary" style={{ marginBottom: 0 }} ellipsis={{ rows: 2 }}>{item.description}</Paragraph>
+                  }
+                />
+              </List.Item>
+            )}
+          />
+        </div>
+      </Skeleton>
+    )
+    const menuContent = (
+      <Menu>
         <Menu.Item>
-          <Link to="/">
+          <Link to="/my">
             <Icon type="user" />个人中心
           </Link>
         </Menu.Item>
@@ -54,9 +76,9 @@ export class UpperUser extends React.Component {
             <Icon type="account-book" />我的订单
           </Link>
         </Menu.Item>
-        <Menu.Divider />
+        <Menu.Divider style={{ margin: '8px 0' }} />
         <Menu.Item>
-          <Link to="/">
+          <Link to="/" style={{ color: '#ff4d4f' }}>
             <Icon type="poweroff" />注销
           </Link>
         </Menu.Item>
@@ -68,6 +90,7 @@ export class UpperUser extends React.Component {
           type="flex"
           justify="end"
           align="middle"
+          gutter={24} 
         >
           <Col>
             <Popover
@@ -76,28 +99,7 @@ export class UpperUser extends React.Component {
               title={<span className="upper-user-notices-title">消息通知</span>}
               trigger="click"
               onVisibleChange={(visible) => this.onVisibleNotices(visible)}
-              content={
-                <Skeleton loading={isLoading} active>
-                  <div className="upper-user-notices-content">
-                    <List
-                      itemLayout="horizontal"
-                      dataSource={notices}
-                      renderItem={item => (
-                        <List.Item className="upper-user-notices-item">
-                          <List.Item.Meta
-                            title={
-                              <Link to="/" className="title">{item.title}</Link>
-                            }
-                            description={
-                              <Paragraph type="secondary" style={{ marginBottom: 0 }} ellipsis={{ rows: 2 }}>{item.description}</Paragraph>
-                            }
-                          />
-                        </List.Item>
-                      )}
-                    />
-                  </div>
-                </Skeleton>
-              }
+              content={noticeContent}
             >
               <Badge count={notices.length} overflowCount={99} dot>
                 <Icon type="bell" theme="twoTone" style={{ fontSize: 20, cursor: 'pointer' }} />
@@ -105,10 +107,11 @@ export class UpperUser extends React.Component {
             </Popover>
           </Col>
           <Col>
-            <Dropdown
-              overlay={menu}
-              trigger={['click']}
+            <Popover
+              overlayClassName="upper-user-dropdown-menu"
               placement="bottomRight"
+              trigger="click"
+              content={menuContent}
             >
               <div className="upper-user-avatar">
                 <Avatar
@@ -119,7 +122,6 @@ export class UpperUser extends React.Component {
                   style={{
                     backgroundColor: '#fff',
                     color: '#ccc',
-                    marginLeft: 20,
                     marginRight: 8
                   }}
                 />
@@ -128,7 +130,7 @@ export class UpperUser extends React.Component {
                   <Icon type="caret-down" style={{ marginLeft: 3 }} />
                 </span>
               </div>
-            </Dropdown>
+            </Popover>
           </Col>
         </Row>
       </div>
