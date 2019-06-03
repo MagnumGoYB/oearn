@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import logo from '../logo.png'
+import logo from '../logo-light.png'
 
 const Logo = () => (
   <Link to="/" className="logo">

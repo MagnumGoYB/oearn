@@ -90,7 +90,7 @@ export class UpperUser extends React.Component {
           type="flex"
           justify="end"
           align="middle"
-          gutter={24} 
+          gutter={16} 
         >
           <Col>
             <Popover
@@ -102,7 +102,7 @@ export class UpperUser extends React.Component {
               content={noticeContent}
             >
               <Badge count={notices.length} overflowCount={99} dot>
-                <Icon type="bell" theme="twoTone" style={{ fontSize: 20, cursor: 'pointer' }} />
+                <Icon type="bell" style={{ fontSize: 20, cursor: 'pointer', verticalAlign: '-4px' }} />
               </Badge>
             </Popover>
           </Col>
@@ -122,7 +122,7 @@ export class UpperUser extends React.Component {
                   style={{
                     backgroundColor: '#fff',
                     color: '#ccc',
-                    marginRight: 8
+                    marginRight: 6
                   }}
                 />
                 <span style={{ fontSize: 12 }}>

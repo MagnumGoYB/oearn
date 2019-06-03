@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import { Layout } from 'antd'
+import TopBar from '../layout/TopBar'
 
-import Header from '../layout/Header'
+import { Layout } from 'antd'
 
 const { Content } = Layout
 
@@ -10,9 +10,11 @@ export class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <TopBar />
         <Content className="content">
-          <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Home</div>
+          <div className="container">
+            <div style={{ background: '#fff', padding: 24, minHeight: 880 }}>Home</div>
+          </div>
         </Content>
       </React.Fragment>
     )

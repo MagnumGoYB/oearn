@@ -1,23 +1,92 @@
 @import '~antd/dist/antd.css';
 
-.upper {
-  height: 120px;
-  padding: 0 50px;
+.container {
+  width: 1200px;
+  margin: 0 auto;
 }
 
-.upper::after {
+.topbar {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.topbar .logo {
   display: block;
-  clear: both;
-  height: 0;
-  content: '\20'
+  float: left;
+  margin-right: 20px;
 }
 
-.upper-user-avatar {
+.topbar .logo>img {
+  max-height: 18px;
+  margin-top: -6px;
+}
+
+.topbar .navbar {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: none;
+}
+
+.topbar .top-right-side {
+  float: right;
+}
+
+.topbar .upper-user {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.topbar .anticon,
+.topbar .upper-user .upper-user-avatar {
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.topbar .anticon:hover,
+.topbar .upper-user .upper-user-avatar:hover {
+  color: white;
+}
+
+.topbar .upper-user .upper-user-avatar {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
+  line-height: 1;
+}
+
+.topbar .top-search {
+  width: 200px;
+}
+
+.topbar .top-search>input {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.65);
+  border-width: 1.5px;
+  box-shadow: none;
+  border-radius: 30px;
+}
+
+.topbar .top-search:hover>input,
+.topbar .top-search>input:hover,
+.topbar .top-search>input:focus {
+  color: white;
+  border-color: white !important;
+}
+
+.topbar .top-search>input::placeholder {
+  opacity: .4;
+}
+
+.topbar .top-search .anticon {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.topbar .top-search .anticon:hover {
+  color: white;
 }
 
 .upper-user-dropdown-menu ul {
@@ -27,6 +96,10 @@
 
 .upper-user-dropdown-menu ul li:not(:last-child) {
   margin-bottom: 4px !important;
+}
+
+.upper-user-dropdown-menu ul li.ant-menu-item-selected {
+  background-color: transparent !important;
 }
 
 .upper-user-dropdown-menu .anticon {
@@ -67,21 +140,6 @@
   text-overflow: ellipsis;
 }
 
-.logo {
-  position: relative;
-}
-
-.logo > img {
-  max-height: 30px;
-}
-
-.navbar {
-  height: 64px;
-  line-height: 64px;
-  border-bottom: none;
-}
-
 .content {
   padding: 0 50px;
 }
-
