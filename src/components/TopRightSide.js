@@ -1,16 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import AppWithContext from '../AppWithContext'
 
 import UpperUser from './UpperUser'
 
-import { Row, Col, Input } from 'antd'
+import { Row, Col, Input, Icon, Divider } from 'antd'
 
 const { Search } = Input
 
 export class TopRightSide extends React.Component {
   render() {
     const { data } = this.props
+    const { logged } = data
     const { user } = data
     return (
       <Row 
@@ -28,7 +30,14 @@ export class TopRightSide extends React.Component {
           />
         </Col>
         <Col>
-          <UpperUser name={user.name} avatar={user.avatar} />
+          { logged && <UpperUser name={user.name} avatar={user.avatar} notices={user.notices} /> }
+          { !logged && 
+            <div className="top-not-logged">
+              <Link to="/"><Icon type="user" />登录</Link>
+              <Divider type="vertical" />
+              <Link to="/">注册</Link>
+            </div>
+          }
         </Col>
       </Row>
     )

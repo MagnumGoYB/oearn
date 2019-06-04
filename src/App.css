@@ -58,16 +58,18 @@
 }
 
 .topbar .top-search {
-  width: 200px;
+  width: 150px;
 }
 
 .topbar .top-search>input {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.65);
   border-color: rgba(255, 255, 255, 0.65);
-  border-width: 1.5px;
+  border-width: 1px;
+  height: 26px;
   box-shadow: none;
   border-radius: 30px;
+  font-size: 12px;
 }
 
 .topbar .top-search:hover>input,
@@ -78,7 +80,7 @@
 }
 
 .topbar .top-search>input::placeholder {
-  opacity: .4;
+  opacity: .5;
 }
 
 .topbar .top-search .anticon {
@@ -87,6 +89,24 @@
 
 .topbar .top-search .anticon:hover {
   color: white;
+}
+
+.topbar .top-not-logged,
+.topbar .top-not-logged>a {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.topbar .top-not-logged>a:hover {
+  color: white;
+}
+
+.topbar .top-not-logged .anticon {
+  transition: none;
+  margin-right: 5px;
+}
+
+.topbar .top-not-logged .ant-divider {
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .upper-user-dropdown-menu ul {
@@ -98,6 +118,8 @@
   margin-bottom: 4px !important;
 }
 
+.upper-user-dropdown-menu ul li.ant-menu-item:active, 
+.upper-user-dropdown-menu ul li.ant-menu-submenu-title:active,
 .upper-user-dropdown-menu ul li.ant-menu-item-selected {
   background-color: transparent !important;
 }

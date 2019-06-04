@@ -15,9 +15,11 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      logged: true,
       user: {
         name: '鲁Da师',
-        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        bio: '但行好事，莫问前程'
       }
     }
     this.actions = {}

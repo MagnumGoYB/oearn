@@ -1,3 +1,87 @@
 .my-block {
   background-color: #001529;
+  color: white;
+}
+
+.my-block-info {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+}
+
+.my-block-info .avatar {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  text-align: center;
+  left: 8px;
+  bottom: -30px;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.my-block-info .avatar .ant-avatar {
+  border: 5px solid white;
+}
+
+.my-block-info .study-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.my-block-info .study-count-item {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+}
+
+.my-block-info .study-count-item:hover {
+  color: white;
+}
+
+.my-block-info .study-count .number,
+.my-block-info .study-count .title {
+  display: block;
+  text-align: center;
+}
+
+.my-block-info .study-count .number {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.my-block-info .study-count .setting-btn {
+  font-size: 14px;
+  height: 36px;
+  line-height: 30px;
+  margin-left: 20px;
+  color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.my-block-info .study-count .setting-btn:hover {
+  color: white;
+  border-color: white;
+}
+
+.my-block-info .profile {
+  margin-left: 168px;
+  margin-right: 350px;
+  height: 135px;
+  padding-top: 60px;
+}
+
+.my-block-info .profile .name {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.my-block-info .profile .bio {
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.65);
 }
