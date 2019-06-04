@@ -54,7 +54,7 @@ export class MyBlock extends Component {
                 <span className="title">粉丝</span>
               </Col>
               <Col>
-                <Link to="/">
+                <Link to="/setting">
                   <Button shape="round" icon="setting" className="setting-btn" ghost>个人设置</Button>
                 </Link>
               </Col>

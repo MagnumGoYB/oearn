@@ -1,4 +1,6 @@
 .my-block {
+  position: relative;
+  z-index: 2;
   background-color: #001529;
   color: white;
 }

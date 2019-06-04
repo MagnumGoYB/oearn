@@ -18,7 +18,7 @@ class App extends Component {
       logged: true,
       user: {
         name: '鲁Da师',
-        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        avatar: 'https://avatars2.githubusercontent.com/u/22886057',
         bio: '但行好事，莫问前程'
       }
     }
