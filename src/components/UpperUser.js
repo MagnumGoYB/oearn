@@ -10,6 +10,7 @@ export class UpperUser extends React.Component {
     super(props)
     this.state = {
       isLoading: false,
+      isUserDropdownVisible: false,
       notices: [
         {
           title: '习近平重要指示催人奋进 张富清事迹彰显奉献精神',
@@ -23,6 +24,24 @@ export class UpperUser extends React.Component {
         }
       ]
     }
+  }
+  componentDidMount() {
+    document.addEventListener('click', this.handleClick, false)
+  }
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleClick, false)
+  }
+  handleClick = (event) => {
+    if (this.avatarNode.contains(event.target)) return
+    this.setState({
+      isUserDropdownVisible: false
+    })
+  }
+  toggleUserDropdown = (event) => {
+    event.preventDefault()
+    this.setState({
+      isUserDropdownVisible: !this.state.isUserDropdownVisible
+    })
   }
   onVisibleNotices = (visible) => {
     if (visible) {
@@ -38,7 +57,7 @@ export class UpperUser extends React.Component {
   }
   render() {
     const { name, avatar } = this.props
-    const { isLoading, notices } = this.state
+    const { isLoading, isUserDropdownVisible, notices } = this.state
     const filterUnreadNotices = Object.keys(notices)
     .filter(id => notices[id].unread === true)
     .map(id => notices[id])
@@ -65,9 +84,9 @@ export class UpperUser extends React.Component {
       </Skeleton>
     )
     const menuContent = (
-      <Menu>
+      <Menu selectable={false}>
         <Menu.Item>
-          <Link to="/my">
+          <Link to="/mine">
             <Icon type="user" />个人中心
           </Link>
         </Menu.Item>
@@ -116,9 +135,14 @@ export class UpperUser extends React.Component {
               overlayClassName="upper-user-dropdown-menu"
               placement="bottomRight"
               trigger="click"
+              visible={isUserDropdownVisible}
               content={menuContent}
             >
-              <div className="upper-user-avatar">
+              <div 
+                className="upper-user-avatar" 
+                ref={(ref) => {this.avatarNode = ref}}
+                onClick={this.toggleUserDropdown}
+              >
                 <Avatar
                   size="small"
                   shape="square"

@@ -5,11 +5,14 @@ import { AppContext } from './AppContext'
 
 import './App.css'
 
+import TopBar from './layout/TopBar'
+
 import { Layout } from 'antd'
 
 import Home from './pages/Home'
 import Community from './pages/Community'
-import My from './pages/My'
+import Mine from './pages/Mine'
+import MineCourse from './pages/MineCourse'
 
 class App extends Component {
   constructor(props) {
@@ -34,9 +37,11 @@ class App extends Component {
       >
         <Router>
           <Layout className="layout">
+            <TopBar />
             <Route path='/' exact component={Home} />
             <Route path='/community' component={Community} />
-            <Route path='/my' component={My} />
+            <Route path='/mine' exact component={Mine} />
+            <Route path='/mine/course' component={MineCourse} />
           </Layout>
         </Router>
       </AppContext.Provider>
