@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import MineContainer from '../layout/MineContainer'
+import MineList from '../components/MineList'
 
 import { Row, Col, Carousel, List, Icon } from 'antd'
 
@@ -77,7 +78,7 @@ export class Mine extends Component {
                   }
                 </Carousel>
               }
-
+              <MineList />
             </div>
           </Col>
           <Col span={9}>
